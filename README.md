@@ -17,3 +17,5 @@ Don't have a Windows box? Don't want the Windows utility? Use this thing.
       -h, --help  show this help message and exit
 
     use 'python -m serial.tools.list_ports' to find port
+
+Note: if you use a version of Python < 2.7 you MUST install argparse.
