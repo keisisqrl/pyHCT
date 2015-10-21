@@ -14,7 +14,7 @@ parser.add_argument('output',
 args = parser.parse_args()
 
 # Open serial port. Errors passed to user. Timeout may be excessive.
-ser = serial.Serial(args.port,timeout=2)
+ser = serial.Serial(args.port,timeout=.1)
 
 # Open output file. Errors, again, passed to user.
 outfile = open(args.output,'w')
@@ -44,7 +44,7 @@ while True:
     hct_in = hct_in.rsplit(']',1)[0] # Strip late data
   # The next statement deals with an edge case:
   # what happens if '\n]' happens across reads?
-  if hct_in.ends_with('\n'): # If the read buffer ends with newline
+  if hct_in.endswith('\n'): # If the read buffer ends with newline
     next_byte = ser.read(1) # Read one more byte...
     if next_byte == ']': # if it's a close brace
       in_adif = False # we're done with ADIF; throw it away
