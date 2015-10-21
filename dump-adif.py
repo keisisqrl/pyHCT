@@ -13,7 +13,7 @@ parser.add_argument('output',
   help='.adi file to be written (WILL BE OVERWRITTEN)')
 args = parser.parse_args()
 
-# Open serial port. Errors passed to user. Timeout may be excessive.
+# Open serial port. Errors passed to user. Timeout may be tuned.
 ser = serial.Serial(args.port,timeout=.1)
 
 # Open output file. Errors, again, passed to user.
