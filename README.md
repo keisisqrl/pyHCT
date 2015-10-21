@@ -3,8 +3,6 @@ Python ADIF tool for QRPWorks logging modules
 
 Don't have a Windows box? Don't want the Windows utility? Use this thing.
 
-(note: not currently tested)
-
     usage: dump-adif.py [-h] port output
 
     Load ADIF from a QRPworks HCT or SideKar module.
